@@ -1,0 +1,10 @@
+# Tex ignores
+*.aux
+*.fdb*
+*.log
+*.lof
+*.lot
+*.fls
+*.out
+*.synctex*
+*.toc

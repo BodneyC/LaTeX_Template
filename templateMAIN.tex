@@ -1,0 +1,60 @@
+%------------------------Document Basic-------------------------%
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\spacing{1.5}
+\usepackage{hyperref}
+\usepackage{caption}
+
+%----------------------Input sanitization-----------------------%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % For copying from MSoft-Word
+
+%-----------------------PDF and landscape-----------------------%
+% \usepackage{pdfpages}
+% \usepackage{pdflscape}
+
+%----------------------Inclusion of images----------------------%
+\usepackage{float}
+\usepackage{graphicx} % For altering images
+\graphicspath{ {./figures/} }
+
+%-------------------For importing .tex files--------------------%
+\usepackage{import}
+	% EXAMPLE: \import{./texdocs/}{[filename].tex} \pagebreak
+
+%----------------------------Tables-----------------------------%
+\usepackage{longtable}
+	% \setlength{\LTpre}{0.4pt}
+	% \setlength{\LTpost}{0pt}
+\usepackage{tabularx}
+\usepackage{array} % Centering of \longtable
+	\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+	\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+	\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% \usepackage{multicol}
+% \usepackage{multirow}
+
+%-----------------------Header and Footer-----------------------%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{[Author Name]}
+\chead{[HEADER TITLE]}
+\rhead{[Additional Info]}
+\usepackage{lastpage}
+\cfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+%---------------------General and meta info---------------------%
+\author{Benjamin Carrington}
+\title{\textbf{Note Taking}}
+\date{}
+\setlength{\parindent}{0pt}
+\usepackage{textcomp} % \textrightarrow
+
+%-------------------------Document begin------------------------%
+\begin{document}
+	\import{./texdocs/}{0frontandcont.tex} \pagebreak
+	\import{./texdocs/}{1examples.tex} \pagebreak
+\end{document}
