@@ -2,12 +2,31 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{setspace}
-\spacing{1.5}
+	\spacing{1.2}
 \usepackage{hyperref}
-\usepackage[section]{placeins} %\FloatBarrier
+\usepackage{placeins} %\FloatBarrier
 \usepackage{lscape}
 \usepackage{caption}
 \usepackage[titletoc,toc,page]{appendix} % "titletoc" = "Appendix" X
+% \usepackage[backend=biber,sorting=none]{biblatex}
+% 	\addbibresource{biblio.bib}
+\newcommand{\monof}{\fontfamily{pcr}\selectfont}
+
+%------------------------Title Spacing--------------------------%
+\let\counterwithout\relax
+\let\counterwithin\relax
+\usepackage{titlesec} % TOC levels
+	\titlespacing*{\section}
+		{0pt}{8pt}{4pt}
+	\titlespacing*{\subsection}
+		{0pt}{6pt}{2pt}
+	\titlespacing*{\subsubsection}
+		{0pt}{3pt}{2pt}
+	\setcounter{secnumdepth}{5}	% TOC level
+	%\titleformat{\paragraph} 
+
+\usepackage{textcomp}
+	\newcommand{\tildecentre}{\raisebox{0.5ex}{\texttildelow}}
 
 %----------------------Input sanitization-----------------------%
 \usepackage[T1]{fontenc}
@@ -20,7 +39,7 @@
 %----------------------Inclusion of images----------------------%
 \usepackage{float}
 \usepackage{graphicx} % For altering images
-\graphicspath{ {./figures/} }
+	\graphicspath{ {./figures/} }
 
 %-------------------For importing .tex files--------------------%
 \usepackage{import}
@@ -40,14 +59,21 @@
 
 %-----------------------Header and Footer-----------------------%
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{[Author Name]}
-\chead{[HEADER TITLE]}
-\rhead{[Additional Info]}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{[Author Name]}
+	\chead{[HEADER TITLE]}
+	\rhead{[Additional Info]}
 \usepackage{lastpage}
 \cfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
+
+%----------------------------Spacing----------------------------%
+\newlength{\oldpskip}
+\setlength{\oldpskip}{\parskip}
+\newlength{\newpskip}
+\setlength{\newpskip}{12pt}
+\emergencystretch=1em
 
 %---------------------General and meta info---------------------%
 \author{Benjamin Carrington}
